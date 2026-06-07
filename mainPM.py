@@ -1,4 +1,4 @@
-import funsionsPM as Red
+import funtionsPM as Red
 l = Red.ConfigPass()
 le = l[0]
 config = l[1]
