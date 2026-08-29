@@ -44,7 +44,7 @@ def ConfigPass():
             break
         elif (choise1.upper() == "N") and (choise2.upper() == "N") and(choise3.upper() == "N"):
             print("no puedes elimar todos")
-    return l, characters, c
+    return int(l), characters, c
 
 def CreatePass(le,config):
     import random
@@ -53,14 +53,14 @@ def CreatePass(le,config):
         a = random.choice(config)
         c.append(a)
     p = "".join(c)
-    return p,
+    return p
 
 def SafeConfig(p,c,le):
     import random
     import string
-    letters = []
-    digits = []
-    puntuations = []
+    letters = 0
+    digits = 0
+    puntuations = 0
     if (c == string.ascii_letters) or (c == string.digits) or (c == string.punctuation):
         return print(p)
     elif c == (string.ascii_letters,string.digits,string.punctuation):
@@ -75,8 +75,8 @@ def SafeConfig(p,c,le):
                 a = random.randint(1,le)
                 for i in range(a):
                     b = random.randint(0,le)
-                    p.pop(b)
-                    d = random.randint(string.ascii_letters)
+                    p = p.pop(b)
+                    d = random.choice(string.ascii_letters)
                     p.append(b,d)
                 return print(p)
             elif digits == 0:
@@ -84,7 +84,7 @@ def SafeConfig(p,c,le):
                 for i in range(a):
                     b = random.randint(0,le)
                     p.pop(b)
-                    d = random.randint(string.digits)
+                    d = random.choice(string.digits)
                     p.append(b,d)
                 return print(p)
             elif puntuations == 0:
@@ -92,7 +92,7 @@ def SafeConfig(p,c,le):
                 for i in range(a):
                     b = random.randint(0,le)
                     p.pop(b)
-                    d = random.randint(string.punctuation)
+                    d = random.choice(string.punctuation)
                     p.append(b,d)
                 return print(p)
     elif c == (string.ascii_letters,string.digits):
@@ -106,7 +106,7 @@ def SafeConfig(p,c,le):
                 for i in range(a):
                     b = random.randint(0,le)
                     p.pop(b)
-                    d = random.randint(string.ascii_letters)
+                    d = random.choice(string.ascii_letters)
                     p.append(b,d)
                 return print(p)
             elif digits == 0:
@@ -114,7 +114,7 @@ def SafeConfig(p,c,le):
                 for i in range(a):
                     b = random.randint(0,le)
                     p.pop(b)
-                    d = random.randint(string.digits)
+                    d = random.choice(string.digits)
                     p.append(b,d)
                 return print(p)
     elif c == (string.ascii_letters,string.punctuation):
@@ -128,7 +128,7 @@ def SafeConfig(p,c,le):
                 for i in range(a):
                     b = random.randint(0,le)
                     p.pop(b)
-                    d = random.randint(string.ascii_letters)
+                    d = random.choice(string.ascii_letters)
                     p.append(b,d)
                 return print(p)
             elif puntuations == 0:
@@ -136,7 +136,7 @@ def SafeConfig(p,c,le):
                 for i in range(a):
                     b = random.randint(0,le)
                     p.pop(b)
-                    d = random.randint(string.punctuation)
+                    d = random.choice(string.punctuation)
                     p.append(b,d)
                 return print(p)
     elif c == (string.digits,string.punctuation):
@@ -150,7 +150,7 @@ def SafeConfig(p,c,le):
                 for i in range(a):
                     b = random.randint(0,le)
                     p.pop(b)
-                    d = random.randint(string.digits)
+                    d = random.choice(string.digits)
                     p.append(b,d)
                 return print(p)
             elif puntuations == 0:
@@ -158,6 +158,6 @@ def SafeConfig(p,c,le):
                 for i in range(a):
                     b = random.randint(0,le)
                     p.pop(b)
-                    d = random.randint(string.punctuation)
+                    d = random.choice(string.punctuation)
                     p.append(b,d)
                 return print(p)
