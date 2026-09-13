@@ -1,10 +1,7 @@
-import funtionsPM as Red
+import funtions as Red
 l = Red.ConfigPass()
 le = l[0]
 config = l[1]
 c = l[2]
-print(config)
-print(c)
-p = Red.CreatePass(le,config)
+p = Red.CreatePass(le,config,c)
 print(p)
-Red.SafeConfig(p,c,le)
